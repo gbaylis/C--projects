@@ -1,0 +1,906 @@
+/*
+C++
+a memorize game / created on Mar 25th 2019
+you get to create the question and the answer
+this way you can type complex programming statements once
+and have this quiz, repeat the question at you until you remember it
+
+q1...q2 = questions
+a1....a2 = answer
+r = response, for when you are being quizzed
+*/
+
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+int main() {
+
+  bool repeat = true;
+  while (repeat)
+  {
+
+/* strings of repeated lines
+string cookie_flavor;  //user chooses a flavor cookies
+string your_name;   name of the user
+string partner_name;   the name of the quiz partner
+string cookie_flavor;  user chooses a flavor cookies
+ */
+int your_cookies = 0; // # of cookies the user age = questions answered incorrectly
+int partner_cookies = 0; // # of cookies the user age = questions answered incorrectly
+
+
+// strings of repeated lines
+string correct_answer = " That is correct ";
+string correct_cookie = " you eat a cookie";
+
+string incorrect_answer = " Good try, but that is incorrect says ,";
+// only reveal the correct answer in the 3rd round of questions
+string give_answer = " the correct answer was ";
+string incorrect_cookie =  " eats a cookie";
+
+string your_response = " What is your response?...";
+
+string type_password = " type your password with the parts in the order listed above and then press enter...";
+
+
+cout << " < < < < < > > > > > " << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > > " << endl;
+cout << "       < < > >  " << endl;
+cout << endl << " This program is a memorization game, ideal for studying or learning a new way to make passwords" << endl;
+cout << " There are 2 parts to this memorization quiz " << endl;
+cout << " The 1st part is being asked to make a question and the answer" << endl;
+cout << " The 2nd part is making a 3 part password and typing the password, with the parts in different orders" << endl;
+
+string your_name;
+cout << endl << ">>>> What is your name ?  " << endl;
+cout << " Type answer here....." << flush;
+getline(cin,your_name);
+cout << " < < < < < > > > > > " << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > > " << endl;
+cout << "       < < > >  " << endl;
+cout << " Hello " + your_name << endl;
+cout << " This is a quiz game, you provide the questions and answers, this is ideal of studying difficult concepts" << endl;
+cout << " or enter the questions and answers, then having a friend play" << endl;
+cout << endl << " The player will get 3 attempts to answer correctly, the answers will be revealed at the end of the 3rd round" << endl;
+cout << " You will be asked to create a name for this fictional partner, who will be asking the questions" << endl;
+cout << " < < < < < > > > > > " << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > > " << endl;
+cout << "       < < > >  " << endl;
+// ask the user to give a name to the "person" who will quiz them
+string partner_name;
+cout << endl << "> What is the name of the person / partner who is going to quiz you?... " << flush;
+getline(cin,partner_name);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+
+// ask the user what kind of cookies do they like
+string cookie_flavor;
+cout << endl << "> what flavor of cookies do you like?... " << flush;
+getline(cin,cookie_flavor);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+
+// 1st question & answer
+string q1;
+cout << endl << " What is the first question you want in this quiz?... " << flush;
+getline(cin,q1);
+cout << " < < < < < > > > > > " << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+string a1;
+cout << endl << " & what is the 1st answer?... " << flush;
+getline(cin,a1);
+cout << " < < < < < > > > > > " << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > > " << endl;
+cout << "       < < > >  " << endl;
+//2nd Question & Answer
+string q2;
+cout << endl << " What is the 2nd quiz question?... " << flush;
+getline(cin,q2);
+cout << " < < < < < > > > > > " << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > > " << endl;
+cout << "       < < > >  " << endl;
+string a2;
+cout << endl << " & what is the 2nd answer?... " << flush;
+getline(cin,a2);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+//3rd Question & Answer
+string q3;
+cout << endl << " What is the 3rd question?... " << flush;
+getline(cin,q3);
+cout << " < < < < < > > > > > " << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > > " << endl;
+cout << "       < < > >  " << endl;
+string a3;
+cout << endl << " & what is the 3rd answer?... " << flush;
+getline(cin,a3);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// 4th Question & Answer
+string q4;
+cout << endl << " What is the 4th question?... " << flush;
+getline(cin,q4);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+string a4;
+cout << endl << " & what is the 4th answer?... " << flush;
+getline(cin,a4);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// 5th Question & Answer
+string q5;
+cout << endl << " What is the 5th Question you want in this quiz?... " << flush;
+getline(cin,q5);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+string a5;
+cout << endl << " & what is the 5th answer?... " << flush;
+getline(cin,a5);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+
+// the start of the actual memorization game
+cout << " You are sitting at a table across from " + partner_name + " in a dining room." << endl;
+cout << " a plate of " + cookie_flavor + " cookie's" + " sits between the 2 of you." << endl;
+cout << " " + your_name + ", I invited you over here because you asked me to help you study, we can practice as much as you like says " + partner_name << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// The 1st round of questions
+cout << " here comes the 1st question says " + partner_name << endl;
+cout << "> " + q1 << endl;
+cout << " < < < < < > > > > > " << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > > " << endl;
+cout << "       < < > >  " << endl;
+// r = response , the response to the first question
+string r1;
+cout << endl << your_response << flush;
+getline(cin,r1);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// if user gets the answer correct, they get a cookie
+// if the user answered incorrectly, the partner eats a cookie
+if (r1 == a1) {
+cout << correct_answer + your_name + ", says " + partner_name << endl;
+cout << correct_cookie << endl;
+int your_cookies = your_cookies + 1;
+} else {
+cout << incorrect_answer + partner_name << endl;
+cout << " " + partner_name + incorrect_cookie << endl;
+int partner_cookies = partner_cookies + 1;
+}
+// 2nd (q) question, (r) response & (a) answer
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << endl << " Question # 2 " << endl;
+cout << "> " + q2 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// (q) question, (r) response & (a) answer
+string r2;
+cout << endl << your_response << flush;
+getline(cin,r2);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+if (r2 == a2) {
+cout << correct_answer + your_name + ", says " + partner_name << endl;
+cout << correct_cookie << endl;
+int your_cookies = your_cookies + 1;
+} else {
+cout << incorrect_answer + partner_name << endl;
+cout << " " + partner_name + incorrect_cookie << endl;
+int partner_cookies = partner_cookies + 1;
+}
+// 3rd q,a,r
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << endl << " The 3rd Question " << endl;
+cout << "> " + q3 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// r = response
+string r3;
+cout << endl << your_response << flush;
+getline(cin,r3);
+cout << " < < < < < > > > > > " << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > > " << endl;
+cout << "       < < > >  " << endl;
+if (r3 == a3) {
+cout << correct_answer + your_name + ", says " + partner_name << endl;
+cout << correct_cookie << endl;
+int your_cookies = your_cookies + 1;
+} else {
+cout << incorrect_answer + partner_name << endl;
+cout << " " + partner_name + incorrect_cookie << endl;
+int partner_cookies = partner_cookies + 1;
+}
+// 4th q,a,r
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << endl << " The 4th Question" << endl;
+cout << "> " + q4 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// r = response
+string r4;
+cout << endl << your_response << flush;
+getline(cin,r4);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+if (r4 == a4) {
+cout << correct_answer + your_name + ", says " + partner_name << endl;
+cout << correct_cookie << endl;
+int your_cookies = your_cookies + 1;
+} else {
+cout << incorrect_answer + partner_name << endl;
+cout << " " + partner_name + incorrect_cookie << endl;
+partner_cookies = partner_cookies + 1;
+}
+//5th q,a,r
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << endl << " The 5th Quesion" << endl;
+cout << "> " + q5 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// r = response
+string r5;
+cout << endl << your_response << flush;
+getline(cin,r5);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+if (r5 == a5) {
+cout << correct_answer + your_name + ", says " + partner_name << endl;
+cout << correct_cookie << endl;
+int your_cookies = your_cookies + 1;
+} else {
+cout << incorrect_answer + partner_name << endl;
+cout << " " + partner_name + incorrect_cookie << endl;
+int partner_cookies = partner_cookies + 1;
+}
+//ask the user for the 1st part of what will become a password
+string p1;
+cout << endl << " " + your_name +  " you are going to create a 3-part password " << endl;
+cout << endl << " For the first part of the password, type the first letter of all the words from an expression or line of dialogue from a tv show or movie.. " << flush;
+cout << endl << " Let's say the line of dialogue was, \"Where are you?\", then you would type, \"way?\"" << flush;
+cout << endl << " Type the first part of the password here then press enter...." << flush;
+getline(cin,p1);
+//ask the user for the 2nd part of what will become a password
+string p2;
+cout << endl << " " << endl;
+cout << endl << " Type the year you discovered / year created, show or movie, then press enter.. " << flush;
+getline(cin,p2);
+//ask the user for the 3rd part of what will become a password
+string p3;
+cout << endl << " " << endl;
+cout << endl << " The name of a character or actor from that show or movie, then press enter.. " << flush;
+getline(cin,p3);
+
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// 2nd round of questions
+cout << endl << " The 1st Question" << endl;
+cout << "> " + q1 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// r = response
+string r6;
+cout << endl << your_response << flush;
+getline(cin,r6);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+if (r6 == a1) {
+cout << correct_answer + your_name + ", says " + partner_name << endl;
+cout << correct_cookie << endl;
+int your_cookies = your_cookies + 1;
+} else {
+cout << incorrect_answer + partner_name << endl;
+cout << " " + partner_name + incorrect_cookie << endl;
+int partner_cookies = partner_cookies + 1;
+}
+// r7 , q2
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << endl << " The 2nd Question" << endl;
+cout << "> " + q2 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// r = response
+string r7;
+cout << endl << your_response << flush;
+getline(cin,r7);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+if (r7 == a2) {
+cout << " " + correct_answer + your_name + ", says " + partner_name << endl;
+cout << correct_cookie << endl;
+int your_cookies = your_cookies + 1;
+} else {
+cout << incorrect_answer + partner_name << endl;
+cout << " " + partner_name + incorrect_cookie << endl;
+int your_cookies = your_cookies + 1;
+}
+// r8 , q3
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << endl << " The 3rd Quesion" << endl;
+cout << "> " + q3 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// r = response
+string r8;
+cout << endl << your_response << flush;
+getline(cin,r8);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+if (r8 == a3) {
+cout << " " + correct_answer + your_name + ", says " + partner_name << endl;
+cout << " " + correct_cookie << endl;
+int your_cookies = your_cookies + 1;
+} else {
+cout << incorrect_answer + partner_name << endl;
+cout << " " + partner_name + incorrect_cookie << endl;
+int partner_cookies = partner_cookies + 1;
+}
+//r9 , q4
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << endl << " The 4th Question " << endl;
+cout << "> " + q4 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// r = response
+string r9;
+cout << endl << your_response << flush;
+getline(cin,r9);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+if (r9 == a4) {
+cout << " " + correct_answer + your_name + ", says " + partner_name << endl;
+cout << " " + correct_cookie << endl;
+int your_cookies = your_cookies + 1;
+} else {
+cout << incorrect_answer + partner_name << endl;
+cout << " " + partner_name + incorrect_cookie << endl;
+int partner_cookies = partner_cookies + 1;
+}
+// r10, q5
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << endl << " The 5th Question " << endl;
+cout << "> " + q5 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// r = response
+string r10;
+cout << endl << your_response << flush;
+getline(cin,r10);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+if (r10 == a5) {
+cout << " " + correct_answer + your_name + ", says " + partner_name << endl;
+cout << " " + correct_cookie << endl;
+int your_cookies = your_cookies + 1;
+} else {
+cout << incorrect_answer + partner_name << endl;
+cout << " " + partner_name + incorrect_cookie << endl;
+int partner_cookies = partner_cookies + 1;
+}
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// asking the user to remember the passwords they created
+cout << " Now lets get back to testing you on password memorization says " + partner_name << endl;
+string p4;
+cout << " " + your_name + " remember the password you created earlier?" << endl;
+cout << endl << " There was the first letter of all the words from an expression or line of dialogue from a tv show or movie.. " << endl;
+cout << endl << " The year you discovered (or year created) that show or movie.. " << endl;
+cout << endl << " The name of a character or actor from that show or movie.. " << endl;
+cout << type_password  << flush;
+getline(cin,p4);
+cout << " < < < < < > > > > > " << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > > " << endl;
+cout << "       < < > >  " << endl;
+string p5;
+
+cout << endl << " The year you discovered that show or movie.. " << endl;
+cout << endl << " The name of a character or actor from that show or movie.. " << endl;
+cout << endl << " first initial of an expression from a tv show or movie.. " << endl;
+cout << type_password << flush;
+getline(cin,p5);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+string p6;
+cout << endl << " The name of a character or actor from that show or movie.. " << endl;
+cout << endl << " first initial of an expression from a tv show or movie.. " << endl;
+cout << endl << " The year you discovered that show or movie.. " << endl;
+cout << type_password << flush;
+getline(cin,p6);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " Below is your passwords, with the parts in different orders " << endl;
+cout << "... 1 " + p1 + p2 + p3 << endl;
+cout << "... 2 " + p2 + p3 + p1 << endl;
+cout << "... 3 " + p3 + p1 + p2 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+string p7;
+cout << " How did you do? asks " + partner_name << endl;
+getline(cin,p7);
+
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// start of the 3rd round of the quiz
+// question1, r11
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << endl << " This is the 3rd round of Questions says, " + partner_name << endl;
+cout << " The 1st Question" << endl;
+cout << "> " + q1 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// r = response
+string r11;
+cout << endl << your_response << flush;
+getline(cin,r11);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+if (r11 == a1) {
+cout << " " + correct_answer + your_name + ", says " + partner_name << endl;
+cout << " " + correct_cookie << endl;
+int your_cookies = your_cookies + 1;
+} else {
+//the 3rd round, reveal the answer
+cout << " " + incorrect_answer + partner_name << endl;
+cout << " " + partner_name + incorrect_cookie << endl;
+cout << endl << " the answer was " << endl;
+cout << "> " + a1 << endl;
+int partner_cookies = partner_cookies + 1;
+}
+
+// q2, r12
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << endl << " The 2nd Question" << endl;
+cout << "> " + q2 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// r = response , 3rd round, reveal the answer if the user answered incorrectly
+string r12;
+cout << endl << your_response << flush;
+getline(cin,r12);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+if (r12 == a2) {
+cout << correct_answer + partner_name << endl;
+cout << correct_cookie << endl;
+int your_cookies = your_cookies + 1;
+} else {
+//the 3rd round, reveal the answer
+cout << " " + incorrect_answer + partner_name << endl;
+cout << " " + partner_name + incorrect_cookie << endl;
+cout << endl << " the correct answer to Question 2 is " << endl;
+cout << " " + a2 << endl;
+int partner_cookies = partner_cookies + 1;
+}
+// q3, r13
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << endl << " The 3rd Question"  << endl;
+cout << "> " + q3 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// r = response
+string r13;
+cout << endl << your_response << flush;
+getline(cin,r13);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+if (r13 == a3) {
+cout << " " + correct_answer + your_name + ", says " + partner_name << endl;
+cout << " " + correct_cookie << endl;
+int your_cookies = your_cookies + 1;
+} else {
+//the 3rd round, reveal the answer
+cout << " " + incorrect_answer + partner_name << endl;
+cout << " " + partner_name + incorrect_cookie << endl;
+cout << endl << " the correct answer to Question 3 is" << endl;
+cout << endl << " " + a3 << endl;
+int partner_cookies = partner_cookies + 1;
+}
+// q4, r14
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << endl << " The 4th Question" << endl;
+cout << "> " + q4 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// r = response , 3rd round, reveal answer if user answers incorrectly
+string r14;
+cout << endl << your_response << flush;
+getline(cin,r14);
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+if (r14 == a4) {
+cout << " " + correct_answer + your_name + ", says " + partner_name << endl;
+cout << " " + correct_cookie << endl;
+int your_cookies = your_cookies + 1;
+} else {
+//the 3rd round, reveal the answer
+cout << " " + incorrect_answer + partner_name << endl;
+cout << " " + partner_name + incorrect_cookie << endl;
+cout << endl << " the correct answer to Question 4 is" << endl;
+cout << endl << " " + a4 << endl;
+int partner_cookies = partner_cookies + 1;
+}
+// q5, q15
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << endl << " The 5th Question" << endl;
+cout << "> " + q5 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+// r = response
+string r15;
+cout << endl << your_response << flush;
+getline(cin,r15);
+cout << " < < < < < > > > > > " << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+if (r15 == a5) {
+cout << " " + correct_answer + your_name + ", says " + partner_name << endl;
+cout << " " + correct_cookie << endl;
+int your_cookies = your_cookies + 1;
+} else {
+  //the 3rd round, reveal the answer
+cout << " " + incorrect_answer + partner_name << endl;
+cout << " " + partner_name + incorrect_cookie << endl;
+cout << endl << " the correct answer to Question 5 is " << endl;
+cout << " " + a5 << endl;
+int partner_cookies = partner_cookies + 1;
+}
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " Okay " + your_name + " lets go over what the 5 Questions and Answers says " + partner_name << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > > " << endl;
+cout << endl << " " + q1 << endl;
+cout << endl << " " + a1 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << endl << " " + q2 << endl;
+cout << endl << " " + a2 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << endl << " " + q3 << endl;
+cout << endl << " " + a3 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << endl << " " + q4 << endl;
+cout << endl << " " + a4 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << endl << " " + q5 << endl;
+cout << endl << " " + a5 << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " Questions answered correctly / cookies " + your_name + " ate" << endl;
+cout << your_cookies << endl;
+cout << "..............................................." << endl;
+cout << " Questions answered incorrectly / cookies " + partner_name + " ate" << endl;
+cout << partner_cookies << endl;
+cout << " < < < < < > > > > >" << endl;
+cout << "   < < < < > > > >" << endl;
+cout << "     < < < > > >" << endl;
+cout << "       < < > >" << endl;
+cout << " I think you did well, if you ever want me to quiz you again, just let me know says, " + partner_name << endl;
+
+cout << " Do you want be quizzed again, type y for yes or n for no.. " << flush;
+char answer;
+cin >> answer;
+if (answer == 'y' || 'Y')
+repeat;
+else
+break;
+}
+return 0;
+}
