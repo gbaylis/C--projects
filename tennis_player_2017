@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  bool repeat = true;
+  while (repeat)
+  {
+    cout << "=================================" << endl;
+    cout << "Enter the name of the tennis player__" << flush;
+    string input;
+    cin >> input;
+    cout << "The name of the tennis player is___" << input << endl;
+    cout << "====================================" << endl;
+
+    cout << "======================================" << endl;
+    cout << "What is the birth year of the tennis player? " << flush;
+    int year;
+    cin >> year;
+    cout << "The tennis player was born in  " << year << endl;
+    cout << "The tennis player will be " << 2017 - year << " years old at the end of 2017" << endl;
+    cout << "===================================" << endl;
+
+    cout << "===================================" << endl;
+    cout << "Which country does the tennis player come from? " << flush;
+    string country;
+    cin >> country;
+    cout << "The tennis player is from  " << country << endl;
+    cout << "======================================" << endl;
+
+    cout << "===================================" << endl;
+    cout << "What is the current rank of that tennis player? " << flush;
+    int rank;
+    cin >> rank;
+    cout << "The current rank of the tennis player is " << rank << endl;
+    cout << "========================================" << endl;
+
+    cout << "===================================" << endl;
+    cout << "Give the tennis player a nick name " << flush;
+    string nick;
+    cin >> nick;
+    cout << nick << " is the nick name of the player" << endl;
+    cout << "======================================" << endl;
+
+    cout << "Which year did the tennis player turn pro? " << flush;
+    int pro;
+    cin >> pro;
+    cout << "The tennis player turned pro in " << pro << endl;
+    cout << "The tennis player has been pro for " << 2017 - pro << " years" << endl;
+    cout << "====================================" << endl;
+
+    cout << "Do you want to research another tennis player? type y for yes or n for no" << endl;
+    char answer;
+    cin >> answer;
+    if (answer == 'y' || 'Y')
+    repeat;
+    else
+    break;
+
+  }
+  return 0;
+}
