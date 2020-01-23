@@ -181,7 +181,7 @@ cout << "     < < < > > > " << endl;
 cout << "       < < > >  " << endl;
 // r = response , the response to the first question
 string r1;
-cout << endl << your_response << flush;
+cout << endl << your_response << flush;  
 getline(cin,r1);
 cout << " < < < < < > > > > >" << endl;
 cout << "   < < < < > > > >" << endl;
