@@ -12,7 +12,7 @@ r = response, for when you are being quizzed
 
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+using namespace std;   
 
 int main() {
 
