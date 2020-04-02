@@ -6,7 +6,7 @@ this way you can type complex programming statements once
 and have this quiz, repeat the question at you until you remember it
 
 q1...q2 = questions
-a1....a2 = answer
+a1....a2 = answer 
 r = response, for when you are being quizzed
 */
 
