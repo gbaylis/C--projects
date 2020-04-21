@@ -1,6 +1,6 @@
 /*
 	created by gbaylis 
-	updated on Jan 27th 2020 (created back in the summer of 2018)  
+	C++ | user input
 	a C++ program that allows the user to create a made up tennis player
 	If you are going to use this as a template to practice C++
 	change the job title and the questions, to things that can be answered as an int, a string, or might require a math function
